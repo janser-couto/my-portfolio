@@ -1,726 +1,529 @@
-/* ==========================================================
-   PORTFÓLIO PROFISSIONAL
-   Desenvolvedor: Janser
-   Arquivo: script.js
-========================================================== */
+/*
+==========================================================
+PORTFÓLIO PROFISSIONAL
+Desenvolvedor: Janser
+Arquivo: script.js
 
+JavaScript usado apenas para:
+- Menu mobile
+- Navegação
+- Typewriter
+- Botão voltar ao topo
+- Menu ativo
+- Copiar e-mail
 
-/* NAVBAR AO ROLAR */
+O conteúdo principal permanece no HTML.
+==========================================================
+*/
 
-const navbar = document.querySelector(".navbar");
+document.addEventListener("DOMContentLoaded", () => {
 
-function updateNavbar() {
+    /*
+    ======================================================
+    ELEMENTOS
+    ======================================================
+    */
 
-    if (!navbar) return;
+    const navbar = document.querySelector(".navbar");
+    const mobileButton = document.querySelector(".menu-mobile");
+    const menu = document.querySelector(".menu");
+    const navLinks = document.querySelectorAll(".menu a");
 
-    if (window.scrollY > 50) {
+    const sections = document.querySelectorAll("section");
 
-        navbar.style.background = "rgba(10, 10, 15, .90)";
-        navbar.style.padding = "15px 30px";
-        navbar.style.boxShadow =
-            "0 10px 30px rgba(0, 0, 0, .5)";
+    const backToTop = document.getElementById("backToTop");
 
-    } else {
+    const typingElement =
+        document.querySelector(".hero-role");
 
-        navbar.style.background =
-            "rgba(24, 24, 27, .55)";
+    const copyButton =
+        document.getElementById("copyEmail");
 
-        navbar.style.padding = "18px 30px";
+    const emailElement =
+        document.getElementById("email");
 
-        navbar.style.boxShadow =
-            "0 10px 35px rgba(0, 0, 0, .45)";
-    }
-}
 
-window.addEventListener("scroll", updateNavbar);
+    /*
+    ======================================================
+    REDUÇÃO DE MOVIMENTO
+    ======================================================
+    */
 
+    const prefersReducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
 
-/* MENU MOBILE */
 
-const mobileButton =
-    document.querySelector(".menu-mobile");
+    /*
+    ======================================================
+    ESTADO DO SCROLL
+    ======================================================
+    */
 
-const menu =
-    document.querySelector(".menu");
+    let scrollTicking = false;
 
-if (mobileButton && menu) {
 
-    mobileButton.addEventListener("click", (event) => {
+    /*
+    ======================================================
+    NAVBAR
+    ======================================================
+    */
 
-        event.stopPropagation();
+    function updateNavbar() {
 
-        menu.classList.toggle("active");
-
-        const isOpen =
-            menu.classList.contains("active");
-
-        mobileButton.textContent =
-            isOpen ? "✕" : "☰";
-    });
-
-
-    const menuLinks =
-        menu.querySelectorAll("a");
-
-    menuLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            menu.classList.remove("active");
-
-            mobileButton.textContent = "☰";
-
-        });
-
-    });
-
-
-    document.addEventListener("click", (event) => {
-
-        if (
-            !menu.contains(event.target) &&
-            !mobileButton.contains(event.target)
-        ) {
-
-            menu.classList.remove("active");
-
-            mobileButton.textContent = "☰";
-        }
-
-    });
-
-
-    window.addEventListener("resize", () => {
-
-        if (window.innerWidth > 900) {
-
-            menu.classList.remove("active");
-
-            mobileButton.textContent = "☰";
-
-        }
-
-    });
-
-}
-
-
-/* REVEAL DAS SEÇÕES */
-
-const sections =
-    document.querySelectorAll("section");
-
-function revealSections() {
-
-    const trigger =
-        window.innerHeight * 0.85;
-
-    sections.forEach(section => {
-
-        const top =
-            section.getBoundingClientRect().top;
-
-        if (top < trigger) {
-
-            section.classList.add("show");
-
-        }
-
-    });
-
-}
-
-window.addEventListener(
-    "scroll",
-    revealSections
-);
-
-window.addEventListener(
-    "load",
-    revealSections
-);
-
-
-/* TYPING EFFECT - HERO */
-
-const typingElement =
-    document.querySelector(".hero h2");
-
-const heroTexts = [
-
-    "Full Stack Developer",
-
-    "React • TypeScript • Node.js",
-
-    "Construindo Aplicações Modernas",
-
-    "Front-end • Back-end • Banco de Dados"
-
-];
-
-let heroTextIndex = 0;
-
-let heroCharIndex = 0;
-
-let heroDeleting = false;
-
-
-function typeHero() {
-
-    if (!typingElement) return;
-
-    const currentText =
-        heroTexts[heroTextIndex];
-
-
-    if (!heroDeleting) {
-
-        typingElement.textContent =
-            currentText.substring(
-                0,
-                heroCharIndex
-            );
-
-        heroCharIndex++;
-
-
-        if (
-            heroCharIndex >
-            currentText.length
-        ) {
-
-            heroDeleting = true;
-
-            setTimeout(
-                typeHero,
-                1600
-            );
-
+        if (!navbar) {
             return;
         }
 
-    } else {
+        navbar.classList.toggle(
+            "scrolled",
+            window.scrollY > 50
+        );
 
-        typingElement.textContent =
-            currentText.substring(
-                0,
-                heroCharIndex
-            );
-
-        heroCharIndex--;
+    }
 
 
-        if (heroCharIndex < 0) {
+    /*
+    ======================================================
+    BOTÃO VOLTAR AO TOPO
+    ======================================================
+    */
 
-            heroDeleting = false;
+    function updateBackToTop() {
 
-            heroTextIndex++;
+        if (!backToTop) {
+            return;
+        }
+
+        backToTop.classList.toggle(
+            "visible",
+            window.scrollY > 500
+        );
+
+    }
+
+
+    /*
+    ======================================================
+    MENU ATIVO
+    ======================================================
+    */
+
+    function updateActiveMenu() {
+
+        if (!sections.length) {
+            return;
+        }
+
+        const marker = 180;
+
+        let currentSection = "";
+
+
+        for (const section of sections) {
+
+            const rect =
+                section.getBoundingClientRect();
 
 
             if (
-                heroTextIndex >=
-                heroTexts.length
+                rect.top <= marker &&
+                rect.bottom > marker
             ) {
 
-                heroTextIndex = 0;
+                currentSection =
+                    section.id;
+
+                break;
 
             }
 
         }
 
-    }
 
-
-    setTimeout(
-        typeHero,
-        heroDeleting ? 45 : 85
-    );
-
-}
-
-
-if (typingElement) {
-
-    typeHero();
-
-}
-
-
-/* BOTÃO VOLTAR AO TOPO */
-
-const backToTop =
-    document.createElement("button");
-
-backToTop.innerHTML = "↑";
-
-backToTop.id = "backToTop";
-
-backToTop.setAttribute(
-    "aria-label",
-    "Voltar ao topo"
-);
-
-document.body.appendChild(
-    backToTop
-);
-
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        if (window.scrollY > 500) {
-
-            backToTop.classList.add(
-                "visible"
-            );
-
-        } else {
-
-            backToTop.classList.remove(
-                "visible"
-            );
-
+        if (!currentSection) {
+            return;
         }
 
-    }
-);
 
+        navLinks.forEach(link => {
 
-backToTop.addEventListener(
-    "click",
-    () => {
+            const target =
+                link.getAttribute("href");
 
-        window.scrollTo({
-
-            top: 0,
-
-            behavior: "smooth"
+            link.classList.toggle(
+                "current",
+                target === `#${currentSection}`
+            );
 
         });
 
     }
-);
 
 
-/* MENU ATIVO */
+    /*
+    ======================================================
+    SCROLL OTIMIZADO
+    ======================================================
 
-const navLinks =
-    document.querySelectorAll(".menu a");
+    Em vez de executar várias funções diretamente
+    a cada evento de scroll, tudo passa por um único
+    requestAnimationFrame.
+    */
 
+    function handleScroll() {
 
-function updateActiveMenu() {
-
-    let currentSection = "";
-
-
-    sections.forEach(section => {
-
-        const rect =
-            section.getBoundingClientRect();
-
-        const sectionTop =
-            rect.top;
-
-        const sectionBottom =
-            rect.bottom;
-
-
-        if (
-            sectionTop <= 180 &&
-            sectionBottom > 180
-        ) {
-
-            currentSection =
-                section.getAttribute("id");
-
+        if (scrollTicking) {
+            return;
         }
 
-    });
-
-
-    navLinks.forEach(link => {
-
-        link.classList.remove(
-            "current"
-        );
-
-
-        const target =
-            link.getAttribute("href");
-
-
-        if (
-            target ===
-            `#${currentSection}`
-        ) {
-
-            link.classList.add(
-                "current"
-            );
-
-        }
-
-    });
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    updateActiveMenu
-);
-
-window.addEventListener(
-    "load",
-    updateActiveMenu
-);
-
-
-/* ANIMAÇÃO DOS BOTÕES */
-
-const buttons =
-    document.querySelectorAll(
-        ".btn-primary, .btn-secondary"
-    );
-
-
-buttons.forEach(button => {
-
-    button.addEventListener(
-        "mouseenter",
-        () => {
-
-            button.style.transform =
-                "translateY(-5px) scale(1.03)";
-
-        }
-    );
-
-
-    button.addEventListener(
-        "mouseleave",
-        () => {
-
-            button.style.transform =
-                "translateY(0) scale(1)";
-
-        }
-    );
-
-});
-
-
-/* FADE IN DA HERO */
-
-window.addEventListener(
-    "load",
-    () => {
-
-        const hero =
-            document.querySelector(".hero");
-
-
-        if (!hero) return;
+        scrollTicking = true;
 
 
         requestAnimationFrame(() => {
 
-            hero.style.opacity = "1";
+            updateNavbar();
+            updateBackToTop();
+            updateActiveMenu();
 
-            hero.style.transform =
-                "translateY(0)";
+            scrollTicking = false;
 
         });
 
     }
-);
 
 
-/* ANIMAÇÃO FLUTUANTE DA FOTO */
-
-const profile =
-    document.querySelector(
-        ".profile-circle"
-    );
-
-
-if (profile) {
-
-    let profileAngle = 0;
-
-
-    setInterval(() => {
-
-        profileAngle += 0.04;
-
-
-        const movement =
-            Math.sin(profileAngle) * 8;
-
-
-        profile.style.transform =
-            `translateY(${movement}px)`;
-
-    }, 16);
-
-}
-
-
-/* COPIAR E-MAIL */
-
-const copyButton =
-    document.getElementById(
-        "copyEmail"
-    );
-
-
-const emailElement =
-    document.getElementById(
-        "email"
-    );
-
-
-if (
-    copyButton &&
-    emailElement
-) {
-
-    copyButton.addEventListener(
-        "click",
-        async () => {
-
-            const email =
-                emailElement.textContent.trim();
-
-
-            try {
-
-                await navigator.clipboard.writeText(
-                    email
-                );
-
-
-                copyButton.innerHTML =
-                    "✔";
-
-
-                copyButton.setAttribute(
-                    "aria-label",
-                    "E-mail copiado"
-                );
-
-
-                setTimeout(() => {
-
-                    copyButton.innerHTML =
-                        '<i class="fa-regular fa-copy"></i>';
-
-
-                    copyButton.setAttribute(
-                        "aria-label",
-                        "Copiar e-mail"
-                    );
-
-                }, 2000);
-
-
-            } catch (error) {
-
-                console.error(
-                    "Erro ao copiar e-mail:",
-                    error
-                );
-
-            }
-
+    window.addEventListener(
+        "scroll",
+        handleScroll,
+        {
+            passive: true
         }
     );
 
-}
 
+    /*
+    ======================================================
+    MENU MOBILE
+    ======================================================
+    */
 
-/* ==========================================================
-   BORDA NEON DA CAIXA DE CÓDIGO
-========================================================== */
+    function setMenuIcon(isOpen) {
 
-const codeBoxes =
-    document.querySelectorAll(
-        ".code-box"
-    );
-
-
-codeBoxes.forEach(box => {
-
-    box.addEventListener(
-        "mousemove",
-        event => {
-
-            const rect =
-                box.getBoundingClientRect();
-
-
-            const x =
-                event.clientX -
-                rect.left;
-
-
-            const y =
-                event.clientY -
-                rect.top;
-
-
-            const centerX =
-                rect.width / 2;
-
-
-            const centerY =
-                rect.height / 2;
-
-
-            const angle =
-                Math.atan2(
-                    y - centerY,
-                    x - centerX
-                ) *
-                (180 / Math.PI) +
-                90;
-
-
-            box.style.setProperty(
-                "--angle",
-                `${angle}deg`
-            );
-
+        if (!mobileButton) {
+            return;
         }
-    );
 
-});
+        mobileButton.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+            : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
 
-
-/* ==========================================================
-   TYPING EFFECT - SOBRE MIM
-========================================================== */
-
-const typingAbout =
-    document.getElementById(
-        "typing-about"
-    );
-
-
-const textAbout = `const desenvolvedor = {
-
-    Formacao: "Cursando ADS",
-
-    Stack: [
-        "React",
-        "TypeScript",
-        "Node.js",
-        "Express",
-        "PostgreSQL",
-        "Prisma"
-    ],
-
-    Funcao: "Full Stack Developer",
-
-    Diferencial:
-        "Busco sempre codigo limpo e boas praticas",
-
-    Objetivo:
-        "Transformar minhas ideias em realidade"
-
-};`;
-
-
-/* HIGHLIGHT DO CÓDIGO */
-
-function escapeHTML(text) {
-
-    return text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-
-}
-
-
-function highlightSyntax(code) {
-
-    let highlighted =
-        escapeHTML(code);
-
-
-    highlighted =
-        highlighted.replace(
-            /\b(const)\b/g,
-            '<span class="token-keyword">$1</span>'
+        mobileButton.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Fechar menu"
+                : "Abrir menu"
         );
 
-
-    highlighted =
-        highlighted.replace(
-            /"([^"]*)"/g,
-            '<span class="token-string">"$1"</span>'
+        mobileButton.setAttribute(
+            "aria-expanded",
+            String(isOpen)
         );
-
-
-    highlighted =
-        highlighted.replace(
-            /(\b(Formacao|Stack|Funcao|Diferencial|Objetivo)\b)/g,
-            '<span class="token-var">$1</span>'
-        );
-
-
-    highlighted =
-        highlighted.replace(
-            /([{}[\]:;,])/g,
-            '<span class="token-punctuation">$1</span>'
-        );
-
-
-    return highlighted;
-
-}
-
-
-/* DIGITAÇÃO DO CÓDIGO */
-
-if (typingAbout) {
-
-    let aboutIndex = 0;
-
-
-    function typeAbout() {
-
-        if (
-            aboutIndex <=
-            textAbout.length
-        ) {
-
-            const raw =
-                textAbout.substring(
-                    0,
-                    aboutIndex
-                );
-
-
-            typingAbout.innerHTML =
-                highlightSyntax(raw);
-
-
-            aboutIndex++;
-
-
-            setTimeout(
-                typeAbout,
-                25
-            );
-
-        }
 
     }
 
 
-    typeAbout();
+    function closeMobileMenu() {
 
-}
+        if (!menu || !mobileButton) {
+            return;
+        }
+
+        menu.classList.remove("active");
+
+        setMenuIcon(false);
+
+    }
+
+
+    function toggleMobileMenu() {
+
+        if (!menu || !mobileButton) {
+            return;
+        }
+
+        const isOpen =
+            menu.classList.toggle("active");
+
+        setMenuIcon(isOpen);
+
+    }
+
+
+    if (mobileButton && menu) {
+
+        mobileButton.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+                toggleMobileMenu();
+
+            }
+        );
+
+
+        navLinks.forEach(link => {
+
+            link.addEventListener(
+                "click",
+                closeMobileMenu
+            );
+
+        });
+
+
+        document.addEventListener(
+            "click",
+            (event) => {
+
+                if (
+                    !menu.contains(event.target) &&
+                    !mobileButton.contains(event.target)
+                ) {
+
+                    closeMobileMenu();
+
+                }
+
+            }
+        );
+
+
+        window.addEventListener(
+            "resize",
+            () => {
+
+                if (window.innerWidth > 900) {
+
+                    closeMobileMenu();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /*
+    ======================================================
+    TYPEWRITER DO HERO
+    ======================================================
+    */
+
+    const heroTexts = [
+
+        "Full Stack Developer",
+
+        "React • TypeScript • Node.js",
+
+        "Construindo Aplicações Modernas",
+
+        "Front-end • Back-end • Banco de Dados"
+
+    ];
+
+
+    let heroTextIndex = 0;
+    let heroCharIndex = 0;
+    let heroDeleting = false;
+
+
+    function typeHero() {
+
+        if (!typingElement) {
+            return;
+        }
+
+
+        const currentText =
+            heroTexts[heroTextIndex];
+
+
+        if (!heroDeleting) {
+
+            typingElement.textContent =
+                currentText.substring(
+                    0,
+                    heroCharIndex
+                );
+
+            heroCharIndex++;
+
+
+            if (
+                heroCharIndex >
+                currentText.length
+            ) {
+
+                heroDeleting = true;
+
+                setTimeout(
+                    typeHero,
+                    1500
+                );
+
+                return;
+
+            }
+
+        } else {
+
+            typingElement.textContent =
+                currentText.substring(
+                    0,
+                    heroCharIndex
+                );
+
+            heroCharIndex--;
+
+
+            if (heroCharIndex < 0) {
+
+                heroDeleting = false;
+
+                heroTextIndex =
+                    (heroTextIndex + 1) %
+                    heroTexts.length;
+
+            }
+
+        }
+
+
+        setTimeout(
+            typeHero,
+            heroDeleting ? 40 : 75
+        );
+
+    }
+
+
+    if (
+        typingElement &&
+        !prefersReducedMotion
+    ) {
+
+        typeHero();
+
+    }
+
+
+    /*
+    ======================================================
+    BOTÃO VOLTAR AO TOPO
+    ======================================================
+    */
+
+    if (backToTop) {
+
+        backToTop.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior:
+                        prefersReducedMotion
+                            ? "auto"
+                            : "smooth"
+
+                });
+
+            }
+        );
+
+    }
+
+
+    /*
+    ======================================================
+    COPIAR E-MAIL
+    ======================================================
+    */
+
+    if (
+        copyButton &&
+        emailElement
+    ) {
+
+        copyButton.addEventListener(
+            "click",
+            async () => {
+
+                const email =
+                    emailElement.textContent.trim();
+
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        email
+                    );
+
+
+                    copyButton.innerHTML =
+                        '<i class="fa-solid fa-check" aria-hidden="true"></i>';
+
+
+                    copyButton.setAttribute(
+                        "aria-label",
+                        "E-mail copiado"
+                    );
+
+
+                    setTimeout(() => {
+
+                        copyButton.innerHTML =
+                            '<i class="fa-regular fa-copy" aria-hidden="true"></i>';
+
+
+                        copyButton.setAttribute(
+                            "aria-label",
+                            "Copiar endereço de e-mail"
+                        );
+
+                    }, 1800);
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Erro ao copiar e-mail:",
+                        error
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /*
+    ======================================================
+    ESTADO INICIAL
+    ======================================================
+    */
+
+    updateNavbar();
+    updateBackToTop();
+    updateActiveMenu();
+
+});

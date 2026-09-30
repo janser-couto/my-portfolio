@@ -3,242 +3,223 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Janser | Full Stack Developer</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Portfólio profissional de Janser"
+        content="Portfólio de Janser Couto, desenvolvedor Full Stack especializado em React, TypeScript, Node.js e PostgreSQL."
     >
 
-    <link rel="stylesheet" href="style.css">
+    <meta
+        name="author"
+        content="Janser Couto"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#09090B"
+    >
+
+    <link
+        rel="canonical"
+        href="https://janser-couto.github.io/"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="preload"
+        as="image"
+        href="pics/imgs.jpeg"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
+
+    <title>
+        Janser Couto | Full Stack Developer
+    </title>
 </head>
+
 
 <body>
 
-    <div class="background-animation"></div>
+    <!-- HEADER / NAVEGAÇÃO -->
 
-    <header>
-        <nav class="navbar">
+    <header class="site-header">
 
-            <div class="logo">JC</div>
+        <nav
+            class="navbar"
+            aria-label="Navegação principal"
+        >
+
+            <a
+                href="#home"
+                class="logo"
+                aria-label="Janser Couto - Início"
+            >
+                JC
+            </a>
+
 
             <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#sobre">
+                        Sobre
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projetos">
+                        Projetos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contato">
+                        Contato
+                    </a>
+                </li>
+
             </ul>
 
-            <div class="menu-mobile">☰</div>
+
+            <button
+                type="button"
+                class="menu-mobile"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                <i
+                    class="fa-solid fa-bars"
+                    aria-hidden="true"
+                ></i>
+            </button>
 
         </nav>
+
     </header>
 
 
-    <!-- HOME -->
+    <main>
 
-    <section id="home" class="hero">
+        <!-- HOME -->
 
-        <div class="hero-text">
-
-            <span class="mini-title">Prazer,</span>
-
-            <h1>Janser</h1>
-
-            <h2>Full Stack Developer</h2>
-
-            <p>
-                React, TypeScript, Node.js e tecnologias modernas
-                para criar aplicações completas.
-            </p>
-
-            <div class="hero-techs">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Node.js</span>
-            </div>
-
-            <div class="hero-buttons">
-
-                <a
-                    href="#projetos"
-                    class="btn-primary"
-                >
-                    Ver Projetos
-                </a>
-
-                <a
-                    href="#contato"
-                    class="btn-secondary"
-                >
-                    Contato
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-image">
-
-            <div class="profile-circle">
-
-                <img
-                    src="pics/imgs.jpeg"
-                    alt="Janser"
-                >
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SOBRE -->
-
-    <section id="sobre">
-
-        <h2 class="section-title">
-            Sobre Mim
-        </h2>
-
-        <div
-            class="code-box"
-            id="aboutCard"
+        <section
+            id="home"
+            class="section section-home"
+            aria-labelledby="home-title"
         >
 
-            <div class="code-header">
+            <div class="section-container hero">
 
-                <div class="code-buttons">
+                <div class="hero-text">
 
-                    <span class="btn-dot close"></span>
-                    <span class="btn-dot minimize"></span>
-                    <span class="btn-dot maximize"></span>
+                    <p class="mini-title">
+                        Prazer,
+                    </p>
+
+                    <h1 id="home-title">
+                        Janser
+                    </h1>
+
+                    <p class="hero-role">
+                        Full Stack Developer
+                    </p>
+
+                    <p class="hero-description">
+                        Desenvolvedor focado em criar aplicações
+                        modernas, funcionais e responsivas utilizando
+                        tecnologias atuais do desenvolvimento web.
+                    </p>
+
+                    <div
+                        class="hero-techs"
+                        aria-label="Principais tecnologias"
+                    >
+
+                        <span>
+                            React
+                        </span>
+
+                        <span>
+                            TypeScript
+                        </span>
+
+                        <span>
+                            Node.js
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#projetos"
+                            class="btn-primary"
+                        >
+                            Ver Projetos
+                        </a>
+
+                        <a
+                            href="#contato"
+                            class="btn-secondary"
+                        >
+                            Contato
+                        </a>
+
+                    </div>
 
                 </div>
 
-                <span class="code-title">
-                    sobre-mim.js
-                </span>
 
-            </div>
+                <div class="hero-image">
 
+                    <div class="profile-circle">
 
-            <div class="code-content">
-
-                <pre><code id="typing-about"></code></pre>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SKILLS -->
-
-    <section id="skills">
-
-        <h2 class="section-title">
-            Skills
-        </h2>
-
-        <div class="skills-categories">
-
-
-            <!-- FRONT-END -->
-
-            <div class="skills-category">
-
-                <h3 class="skills-category-title">
-
-                    <i class="fa-solid fa-code"></i>
-
-                    Front-end
-
-                </h3>
-
-
-                <div class="skills-grid">
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-react"></i>
-
-                        <h3>React</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-code"></i>
-
-                        <h3>TypeScript</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-js"></i>
-
-                        <h3>JavaScript</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-html5"></i>
-
-                        <h3>HTML5</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-css3-alt"></i>
-
-                        <h3>CSS3</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-wind"></i>
-
-                        <h3>Tailwind CSS</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-bolt"></i>
-
-                        <h3>Vite</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-                        <h3>Framer Motion</h3>
+                        <img
+                            src="pics/imgs.jpeg"
+                            alt="Foto de Janser Couto"
+                            width="500"
+                            height="500"
+                            fetchpriority="high"
+                        >
 
                     </div>
 
@@ -246,91 +227,64 @@
 
             </div>
 
-
-            <!-- BACK-END -->
-
-            <div class="skills-category">
-
-                <h3 class="skills-category-title">
-
-                    <i class="fa-solid fa-server"></i>
-
-                    Back-end
-
-                </h3>
+        </section>
 
 
-                <div class="skills-grid">
+        <!-- SOBRE -->
 
-                    <div class="skill-card">
+        <section
+            id="sobre"
+            class="section section-sobre"
+            aria-labelledby="sobre-title"
+        >
 
-                        <i class="fa-brands fa-node-js"></i>
+            <div class="section-container">
 
-                        <h3>Node.js</h3>
+                <header class="section-heading">
 
-                    </div>
+                    <p class="section-label">
+                        01 / Sobre
+                    </p>
 
+                    <h2
+                        id="sobre-title"
+                        class="section-title"
+                    >
+                        Sobre Mim
+                    </h2>
 
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-server"></i>
-
-                        <h3>Express</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-plug"></i>
-
-                        <h3>REST APIs</h3>
-
-                    </div>
-
-                </div>
-
-            </div>
+                </header>
 
 
-            <!-- BANCO DE DADOS -->
+                <div class="about-content">
 
-            <div class="skills-category">
+                    <div class="about-text">
 
-                <h3 class="skills-category-title">
+                        <p>
+                            Sou estudante de Análise e Desenvolvimento de Sistemas
+                            e venho aprendendo desenvolvimento na prática, 
+                            criando meus próprios projetos e tentando entender 
+                            não só como escrever código, mas como construir 
+                            algo que realmente funcione.
+                        </p>
 
-                    <i class="fa-solid fa-database"></i>
+                        <p>
+                            Meu foco é Full Stack. No front-end, eu gosto de trabalhar
+                            com interfaces responsivas e bem organizadas. 
+                            No back-end, venho desenvolvendo APIs, 
+                            autenticação, integração com banco de dados e regras de negócio.
 
-                    Banco de Dados
+                            Grande parte do que sei hoje veio de projetos que eu mesmo projetei
+                            desde sites e landing pages até sistemas mais completos. 
+                            Gosto de pegar uma ideia, entender o que ela precisa e 
+                            ir construindo até virar algo utilizável.  
+                        </p>
 
-                </h3>
-
-
-                <div class="skills-grid">
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-database"></i>
-
-                        <h3>PostgreSQL</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-table"></i>
-
-                        <h3>SQL</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-layer-group"></i>
-
-                        <h3>Prisma</h3>
+                        <p>
+                            Ainda estou no começo da minha carreira, 
+                            mas já venho buscando aprender de forma independente, 
+                            testar tecnologias diferentes e melhorar meus projetos a cada versão.
+                        </p>
 
                     </div>
 
@@ -338,54 +292,979 @@
 
             </div>
 
-
-            <!-- AUTENTICAÇÃO E SEGURANÇA -->
-
-            <div class="skills-category">
-
-                <h3 class="skills-category-title">
-
-                    <i class="fa-solid fa-shield-halved"></i>
-
-                    Autenticação & Segurança
-
-                </h3>
+        </section>
 
 
-                <div class="skills-grid">
+        <!-- SKILLS -->
 
-                    <div class="skill-card">
+        <section
+            id="skills"
+            class="section section-skills"
+            aria-labelledby="skills-title"
+        >
 
-                        <i class="fa-solid fa-key"></i>
+            <div class="section-container">
 
-                        <h3>JWT</h3>
+                <header class="section-heading">
 
-                    </div>
+                    <p class="section-label">
+                        02 / Tecnologias
+                    </p>
 
+                    <h2
+                        id="skills-title"
+                        class="section-title"
+                    >
+                        Skills
+                    </h2>
 
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-rotate"></i>
-
-                        <h3>Refresh Tokens</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-cookie-bite"></i>
-
-                        <h3>HttpOnly Cookies</h3>
-
-                    </div>
+                </header>
 
 
-                    <div class="skill-card">
+                <div class="skills-categories">
 
-                        <i class="fa-solid fa-shield-halved"></i>
+                    <!-- FRONT-END -->
 
-                        <h3>Cyber Security</h3>
+                    <article class="skills-category">
+
+                        <h3 class="skills-category-title">
+
+                            <i
+                                class="fa-solid fa-code"
+                                aria-hidden="true"
+                            ></i>
+
+                            Front-end
+
+                        </h3>
+
+
+                        <ul class="skills-grid">
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-brands fa-react"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>React</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-code"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>TypeScript</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-brands fa-js"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>JavaScript</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-brands fa-html5"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>HTML5</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-brands fa-css3-alt"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>CSS3</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-wind"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>Tailwind CSS</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-bolt"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>Vite</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-wand-magic-sparkles"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>Framer Motion</span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- BACK-END -->
+
+                    <article class="skills-category">
+
+                        <h3 class="skills-category-title">
+
+                            <i
+                                class="fa-solid fa-server"
+                                aria-hidden="true"
+                            ></i>
+
+                            Back-end
+
+                        </h3>
+
+
+                        <ul class="skills-grid">
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-brands fa-node-js"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>Node.js</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-server"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>Express</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-plug"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>REST APIs</span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- BANCO DE DADOS -->
+
+                    <article class="skills-category">
+
+                        <h3 class="skills-category-title">
+
+                            <i
+                                class="fa-solid fa-database"
+                                aria-hidden="true"
+                            ></i>
+
+                            Banco de Dados
+
+                        </h3>
+
+
+                        <ul class="skills-grid">
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-database"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>PostgreSQL</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-table"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>SQL</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-layer-group"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>Prisma</span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- AUTENTICAÇÃO E SEGURANÇA -->
+
+                    <article class="skills-category">
+
+                        <h3 class="skills-category-title">
+
+                            <i
+                                class="fa-solid fa-shield-halved"
+                                aria-hidden="true"
+                            ></i>
+
+                            Autenticação &amp; Segurança
+
+                        </h3>
+
+
+                        <ul class="skills-grid">
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-key"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>JWT</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-rotate"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>Refresh Tokens</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-cookie-bite"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>HttpOnly Cookies</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-shield-halved"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>Cyber Security</span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- FERRAMENTAS -->
+
+                    <article class="skills-category">
+
+                        <h3 class="skills-category-title">
+
+                            <i
+                                class="fa-solid fa-toolbox"
+                                aria-hidden="true"
+                            ></i>
+
+                            Ferramentas
+
+                        </h3>
+
+
+                        <ul class="skills-grid">
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-brands fa-git-alt"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>Git</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-brands fa-github"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>GitHub</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-brands fa-docker"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>Docker</span>
+                            </li>
+
+                            <li class="skill-card">
+                                <i
+                                    class="fa-solid fa-code"
+                                    aria-hidden="true"
+                                ></i>
+                                <span>VS Code</span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJETOS -->
+
+        <section
+            id="projetos"
+            class="section section-projetos"
+            aria-labelledby="projetos-title"
+        >
+
+            <div class="section-container">
+
+                <header class="section-heading">
+
+                    <p class="section-label">
+                        03 / Projetos
+                    </p>
+
+                    <h2
+                        id="projetos-title"
+                        class="section-title"
+                    >
+                        Projetos
+                    </h2>
+
+                </header>
+
+
+                <div class="projects-grid">
+
+
+                    <!-- PROJETO 01 -->
+
+                    <article class="project-card">
+
+                        <div
+                            class="project-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-number">
+                                Projeto 01
+                            </p>
+
+                            <h3>
+                                Barber Shop
+                            </h3>
+
+                            <p>
+                                Sistema Full Stack para gerenciamento
+                                de barbearia, clientes, serviços e
+                                agendamentos.
+                            </p>
+
+
+                            <ul class="project-techs">
+
+                                <li>React</li>
+                                <li>TypeScript</li>
+                                <li>Node.js</li>
+                                <li>Express</li>
+                                <li>Prisma</li>
+                                <li>PostgreSQL</li>
+
+                            </ul>
+
+
+                            <div class="project-actions">
+
+                                <a
+                                    href="https://github.com/janser-couto/Barber-Shop"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link"
+                                    aria-label="Ver Barber Shop no GitHub"
+                                >
+
+                                    <i
+                                        class="fa-brands fa-github"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <span>
+                                        GitHub
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJETO 02 -->
+
+                    <article class="project-card">
+
+                        <div
+                            class="project-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-number">
+                                Projeto 02
+                            </p>
+
+                            <h3>
+                                Coffee Website
+                            </h3>
+
+                            <p>
+                                Website desenvolvido com foco em
+                                apresentação visual, responsividade
+                                e experiência de navegação.
+                            </p>
+
+
+                            <ul class="project-techs">
+
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+
+                            </ul>
+
+
+                            <div class="project-actions">
+
+                                <a
+                                    href="https://janser-couto.github.io/Coffee-Website/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link project-link-site"
+                                    aria-label="Visitar Coffee Website"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <span>
+                                        Ver site
+                                    </span>
+
+                                </a>
+
+
+                                <a
+                                    href="https://github.com/janser-couto/Coffee-Website"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link"
+                                    aria-label="Ver Coffee Website no GitHub"
+                                >
+
+                                    <i
+                                        class="fa-brands fa-github"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <span>
+                                        GitHub
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJETO 03 -->
+
+                    <article class="project-card">
+
+                        <div
+                            class="project-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-number">
+                                Projeto 03
+                            </p>
+
+                            <h3>
+                                Landing Page ADV
+                            </h3>
+
+                            <p>
+                                Landing page profissional desenvolvida
+                                para apresentação de serviços jurídicos,
+                                com foco em conversão e responsividade.
+                            </p>
+
+
+                            <ul class="project-techs">
+
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+
+                            </ul>
+
+
+                            <div class="project-actions">
+
+                                <a
+                                    href="https://wpaulinoadvocacia.com.br/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link project-link-site"
+                                    aria-label="Visitar Landing Page ADV"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <span>
+                                        Ver site
+                                    </span>
+
+                                </a>
+
+
+                                <a
+                                    href="https://github.com/janser-couto/landing-page-ADV"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link"
+                                    aria-label="Ver Landing Page ADV no GitHub"
+                                >
+
+                                    <i
+                                        class="fa-brands fa-github"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <span>
+                                        GitHub
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJETO 04 -->
+
+                    <article class="project-card">
+
+                        <div
+                            class="project-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-circle-half-stroke"></i>
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-number">
+                                Projeto 04
+                            </p>
+
+                            <h3>
+                                Dark Light Mode
+                            </h3>
+
+                            <p>
+                                Projeto de interface com alternância
+                                entre temas claro e escuro, utilizando
+                                JavaScript e CSS.
+                            </p>
+
+
+                            <ul class="project-techs">
+
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+
+                            </ul>
+
+
+                            <div class="project-actions">
+
+                                <a
+                                    href="https://janser-couto.github.io/Dark-Light-Mode/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link project-link-site"
+                                    aria-label="Visitar Dark Light Mode"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <span>
+                                        Ver site
+                                    </span>
+
+                                </a>
+
+
+                                <a
+                                    href="https://github.com/janser-couto/Dark-Light-Mode"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link"
+                                    aria-label="Ver Dark Light Mode no GitHub"
+                                >
+
+                                    <i
+                                        class="fa-brands fa-github"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <span>
+                                        GitHub
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJETO 05 -->
+
+                    <article class="project-card">
+
+                        <div
+                            class="project-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-user-lock"></i>
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-number">
+                                Projeto 05
+                            </p>
+
+                            <h3>
+                                Login &amp; Registration
+                            </h3>
+
+                            <p>
+                                Website com páginas de login e cadastro,
+                                desenvolvido para praticar interfaces,
+                                formulários e autenticação.
+                            </p>
+
+
+                            <ul class="project-techs">
+
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+
+                            </ul>
+
+
+                            <div class="project-actions">
+
+                                <a
+                                    href="https://janser-couto.github.io/Website-With-Login-and-Registration/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link project-link-site"
+                                    aria-label="Visitar Website With Login and Registration"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <span>
+                                        Ver site
+                                    </span>
+
+                                </a>
+
+
+                                <a
+                                    href="https://github.com/janser-couto/Website-With-Login-and-Registration"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link"
+                                    aria-label="Ver Website With Login and Registration no GitHub"
+                                >
+
+                                    <i
+                                        class="fa-brands fa-github"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <span>
+                                        GitHub
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTATO -->
+
+        <section
+            id="contato"
+            class="section section-contato"
+            aria-labelledby="contato-title"
+        >
+
+            <div class="section-container">
+
+                <header class="section-heading">
+
+                    <p class="section-label">
+                        04 / Contato
+                    </p>
+
+                    <h2
+                        id="contato-title"
+                        class="section-title"
+                    >
+                        Meios de contato
+                    </h2>
+
+                    <p class="contact-subtitle">
+                        Estou disponível para oportunidades como
+                        desenvolvedor, projetos freelance e novas conexões.
+                    </p>
+
+                </header>
+
+
+                <div class="contact-grid">
+
+
+                    <!-- WHATSAPP -->
+
+                    <a
+                        href="https://wa.me/5581996546494"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-card"
+                        aria-label="Entrar em contato pelo WhatsApp"
+                    >
+
+                        <div
+                            class="contact-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+
+
+                        <div class="contact-info">
+
+                            <h3>
+                                WhatsApp
+                            </h3>
+
+                            <span>
+                                Janser Couto
+                            </span>
+
+                        </div>
+
+
+                        <span
+                            class="arrow"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <!-- INSTAGRAM -->
+
+                    <a
+                        href="https://www.instagram.com/eodan.9/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-card"
+                        aria-label="Visitar Instagram de Janser Couto"
+                    >
+
+                        <div
+                            class="contact-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+
+
+                        <div class="contact-info">
+
+                            <h3>
+                                Instagram
+                            </h3>
+
+                            <span>
+                                @eodan.9
+                            </span>
+
+                        </div>
+
+
+                        <span
+                            class="arrow"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <!-- GITHUB -->
+
+                    <a
+                        href="https://github.com/janser-couto"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-card"
+                        aria-label="Visitar GitHub de Janser Couto"
+                    >
+
+                        <div
+                            class="contact-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+
+
+                        <div class="contact-info">
+
+                            <h3>
+                                GitHub
+                            </h3>
+
+                            <span>
+                                janser-couto
+                            </span>
+
+                        </div>
+
+
+                        <span
+                            class="arrow"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <!-- E-MAIL -->
+
+                    <div class="contact-card email-card">
+
+                        <div
+                            class="contact-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+
+                        <div class="contact-info">
+
+                            <h3>
+                                E-mail
+                            </h3>
+
+                            <a
+                                href="mailto:jansercouto@outlook.com"
+                                id="email"
+                            >
+                                jansercouto@outlook.com
+                            </a>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="copyEmail"
+                            aria-label="Copiar endereço de e-mail"
+                            title="Copiar e-mail"
+                        >
+                            <i
+                                class="fa-regular fa-copy"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
 
                     </div>
 
@@ -393,310 +1272,81 @@
 
             </div>
 
+        </section>
 
-            <!-- FERRAMENTAS -->
-
-            <div class="skills-category">
-
-                <h3 class="skills-category-title">
-
-                    <i class="fa-solid fa-toolbox"></i>
-
-                    Ferramentas
-
-                </h3>
-
-
-                <div class="skills-grid">
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-git-alt"></i>
-
-                        <h3>Git</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-github"></i>
-
-                        <h3>GitHub</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-brands fa-docker"></i>
-
-                        <h3>Docker</h3>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <i class="fa-solid fa-code"></i>
-
-                        <h3>VS Code</h3>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJETOS -->
-
-    <section id="projetos">
-
-        <h2 class="section-title">
-            Projetos
-        </h2>
-
-
-        <div class="projects-grid">
-
-            <div class="project-card">
-
-                <div class="project-icon">
-
-                    <i class="fa-solid fa-scissors"></i>
-
-                </div>
-
-
-                <h3>
-                    Barber Shop
-                </h3>
-
-
-                <p>
-                    Sistema de gerenciamento para barbearia,
-                    desenvolvido para facilitar o controle de
-                    clientes, serviços e agendamentos.
-                </p>
-
-
-                <div class="project-techs">
-
-                    <span>React</span>
-                    <span>TypeScript</span>
-                    <span>Node.js</span>
-                    <span>Express</span>
-                    <span>Prisma</span>
-                    <span>PostgreSQL</span>
-
-                </div>
-
-
-                <a
-                    href="https://github.com/janser-couto/Barber-Shop"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                >
-
-                    <i class="fa-brands fa-github"></i>
-
-                    Ver no GitHub
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTATO -->
-
-    <section id="contato">
-
-        <h2 class="section-title">
-            Meios de contato
-        </h2>
-
-
-        <p class="contact-subtitle">
-
-            Estou disponível para oportunidades como Full Stack Developer,
-            projetos freelance e novas conexões.
-
-        </p>
-
-
-        <div class="contact-grid">
-
-
-            <!-- WHATSAPP -->
-
-            <a
-                href="https://wa.me/5581996546494"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-card"
-            >
-
-                <div class="contact-icon">
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                </div>
-
-
-                <div class="contact-info">
-
-                    <h3>
-                        WhatsApp
-                    </h3>
-
-                    <span>
-                        Janser Couto
-                    </span>
-
-                </div>
-
-
-                <div class="arrow">
-                    →
-                </div>
-
-            </a>
-
-
-            <!-- INSTAGRAM -->
-
-            <a
-                href="https://www.instagram.com/eodan.9/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-card"
-            >
-
-                <div class="contact-icon">
-
-                    <i class="fa-brands fa-instagram"></i>
-
-                </div>
-
-
-                <div class="contact-info">
-
-                    <h3>
-                        Instagram
-                    </h3>
-
-                    <span>
-                        @eodan.9
-                    </span>
-
-                </div>
-
-
-                <div class="arrow">
-                    →
-                </div>
-
-            </a>
-
-
-            <!-- GITHUB -->
-
-            <a
-                href="https://github.com/janser-couto"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-card"
-            >
-
-                <div class="contact-icon">
-
-                    <i class="fa-brands fa-github"></i>
-
-                </div>
-
-
-                <div class="contact-info">
-
-                    <h3>
-                        GitHub
-                    </h3>
-
-                    <span>
-                        janser-couto
-                    </span>
-
-                </div>
-
-
-                <div class="arrow">
-                    →
-                </div>
-
-            </a>
-
-
-            <!-- OUTLOOK -->
-
-            <div class="contact-card email-card">
-
-                <div class="contact-icon">
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                </div>
-
-
-                <div class="contact-info">
-
-                    <h3>
-                        Outlook
-                    </h3>
-
-                    <span id="email">
-                        jansercouto@outlook.com
-                    </span>
-
-                </div>
-
-
-                <button
-                    id="copyEmail"
-                    aria-label="Copiar e-mail"
-                >
-
-                    <i class="fa-regular fa-copy"></i>
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
+    </main>
 
 
     <!-- FOOTER -->
 
-    <footer>
+    <!-- FOOTER -->
 
-        <p>
-            © 2026 Janser • Full Stack Developer
-        </p>
+<footer class="site-footer">
+    <div class="footer-content">
 
-    </footer>
+        <div class="footer-top">
+            <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <a href="#home">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#skills">Skills</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <div class="footer-social">
+                <a
+                    href="https://github.com/janser-couto"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/eodan.9/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                    href="https://wa.me/5581996546494"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                >
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Janser Couto. Todos os direitos reservados.</p>
+            <span>Full Stack Developer</span>
+        </div>
+
+    </div>
+</footer>
+    <!-- BOTÃO VOLTAR AO TOPO -->
+
+    <button
+        type="button"
+        id="backToTop"
+        class="back-to-top"
+        aria-label="Voltar ao topo"
+        title="Voltar ao topo"
+    >
+        ↑
+    </button>
 
 
-    <script src="script.js"></script>
+    <script
+        src="script.js"
+        defer
+    ></script>
 
 </body>
 
