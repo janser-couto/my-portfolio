@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             link.classList.toggle(
                 "current",
-                target = `#${currentSection}`
+                target === `#${currentSection}`
             );
 
         });
