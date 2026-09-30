@@ -1,5 +1,5 @@
 /*
-==========================================================
+
 PORTFÓLIO PROFISSIONAL
 Desenvolvedor: Janser
 Arquivo: script.js
@@ -13,15 +13,15 @@ JavaScript usado apenas para:
 - Copiar e-mail
 
 O conteúdo principal permanece no HTML.
-==========================================================
+
 */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /*
-    ======================================================
+    
     ELEMENTOS
-    ======================================================
+    
     */
 
     const navbar = document.querySelector(".navbar");
@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ======================================================
+    
     REDUÇÃO DE MOVIMENTO
-    ======================================================
+    
     */
 
     const prefersReducedMotion =
@@ -56,18 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ======================================================
+    
     ESTADO DO SCROLL
-    ======================================================
+    
     */
 
     let scrollTicking = false;
 
 
     /*
-    ======================================================
+    
     NAVBAR
-    ======================================================
+    
     */
 
     function updateNavbar() {
@@ -85,9 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ======================================================
+    
     BOTÃO VOLTAR AO TOPO
-    ======================================================
+    
     */
 
     function updateBackToTop() {
@@ -105,9 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ======================================================
+    
     MENU ATIVO
-    ======================================================
+    
     */
 
     function updateActiveMenu() {
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             link.classList.toggle(
                 "current",
-                target === `#${currentSection}`
+                target = `#${currentSection}`
             );
 
         });
@@ -163,9 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ======================================================
+    
     SCROLL OTIMIZADO
-    ======================================================
+    
 
     Em vez de executar várias funções diretamente
     a cada evento de scroll, tudo passa por um único
@@ -204,9 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ======================================================
+    
     MENU MOBILE
-    ======================================================
+    
     */
 
     function setMenuIcon(isOpen) {
@@ -319,9 +319,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ======================================================
+    
     TYPEWRITER DO HERO
-    ======================================================
+    
     */
 
     const heroTexts = [
@@ -423,9 +423,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ======================================================
+    
     BOTÃO VOLTAR AO TOPO
-    ======================================================
+    
     */
 
     if (backToTop) {
@@ -452,9 +452,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ======================================================
+    
     COPIAR E-MAIL
-    ======================================================
+    
     */
 
     if (
@@ -517,9 +517,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ======================================================
+    
     ESTADO INICIAL
-    ======================================================
+    
     */
 
     updateNavbar();
